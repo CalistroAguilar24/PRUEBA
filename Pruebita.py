@@ -19,6 +19,6 @@ st.subheader("Características del Dataset")
 st.write(c.describe())
 
 #url del archivo en formato raw
-url = 'https://raw.githubusercontent.com/CalistroAguilar24/PRUEBA/main/fallecidos_covid%20(3).csv'
+url = 'https://raw.githubusercontent.com/brigytt/G_PROGRA/main/Catalogo1960_2021.csv'
 datos = pd.read_csv(url,sep= ',')
 st.line_chart(data=datos, x='FECHA_CORTE', y='EDAD_DECLARADA')
