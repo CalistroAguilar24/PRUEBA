@@ -46,6 +46,5 @@ if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
    selected_year=st.sidebar.selectbox('Edad', list(reversed(range(1960,2021))))
-   df=c
-   filt=(df["EDAD_DECLARADA"]==año_seleccionado)
+   df=cfilt=(df["EDAD_DECLARADA"]==año_seleccionado)
    df[filt]
