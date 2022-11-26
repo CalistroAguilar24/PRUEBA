@@ -30,8 +30,10 @@ if selected == 'Inicio':
       return df
    c=download_data()
    st.dataframe(c)
-   
-   
+if selected == 'Reporte':
+   st.markdown("<h1 style ='text-align: center'>Reporte:</h1>", unsafe_allow_htm1= True)
+      
+      
    #st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
    #st.dataframe(c)
    #st.subheader("Características del Dataset")
