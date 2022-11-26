@@ -50,3 +50,4 @@ if selected == 'Informe':
       df = download_data()
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
+   return df_year
