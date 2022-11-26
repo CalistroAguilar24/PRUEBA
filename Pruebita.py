@@ -51,12 +51,10 @@ if selected == 'Informe':
       filename="Catalogo1960_2021.xlsx"
       urllib.request.urlretrieve(url,filename)
       df=pd.read_csv('Catalogo1960_2021.xlsx')
-      return df
-   c=download_data()
-   def load_data(year,c):
-      df = c
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
       df['LATITUD']= pd.to_numeric(df['LATITUD'])
       return df_year
-load_data(selected_year,c)
+download_data()
+ 
+
