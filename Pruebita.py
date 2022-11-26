@@ -48,8 +48,11 @@ if selected == 'Informe':
    selected_year=st.sidebar.selectbox('Fecha', list(reversed(range(1960,2021))))
    def load_data(year):
       df = download_data()
+      df=df.astype({'ANO':'str'})
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
       df['LATITUD']= pd.to_numeric(df['LATITUD'])
+      grouped = df.groupby(df.ANO)
+      df_year = grouped.get_group(year)
       return df_year
       
