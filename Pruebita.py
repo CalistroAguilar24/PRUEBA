@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 st.header("CATALOGO SISMICO 1960-2021 (IGP)")
 @st.experimental_memo
 
-with st.sidebar:
+With st.sidebar:
    st.markdown("###")
    st.sidebar.header('Programación avanzada')
    selected = option_menu(
