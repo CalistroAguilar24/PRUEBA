@@ -50,11 +50,9 @@ if selected == 'Informe':
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
       urllib.request.urlretrieve(url,filename)
-      datos = pd.read_csv(url,sep= ',')
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
-      df[datos]
 download_data()
 
  
