@@ -10,11 +10,12 @@ with st.sidebar:
    st.sidebar.header('Programación avanzada')
    selected = option_menu(
       menu_title = 'Menú',
-      option = ['Inicio','Informe','Equipo'],
+      options = ['Inicio','Informe','Equipo'],
       icons = ['house','book','book','people'],
       menu_icon = 'cast',
       default_index = 0,
    )
+   
 if selected == 'Inicio':
    st.markdown("<h1 style ='text-aling: center'> Título:</h1>", unnsafe_allow_htm1= True)
    st.markdown("---")
