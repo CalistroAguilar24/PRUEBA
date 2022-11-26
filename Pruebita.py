@@ -41,4 +41,5 @@ if selected == 'Inicio':
    datos = pd.read_csv(url,sep= ',')
    st.line_chart(data=datos, x='FECHA_UTC', y='MAGNITUD')
    image = Image.open('imagen 1.jpg')
+   st.image(image,use_column_width=True)
 
