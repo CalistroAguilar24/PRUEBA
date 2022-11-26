@@ -59,4 +59,4 @@ if selected == 'Informe':
       df[filt]
       df['LATITUD']= pd.to_numeric(df['LATITUD'])
       return df_year
-load_data(selected_year)
+load_data(selected_year,c)
