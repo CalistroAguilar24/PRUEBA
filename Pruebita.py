@@ -5,7 +5,6 @@ import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 
-
 with st.sidebar:
    st.markdown("###")
    st.sidebar.header('Programación avanzada')
