@@ -55,4 +55,4 @@ if selected == 'Informe':
       grouped = df.groupby(df.ANO)
       df_year = grouped.get_group(year)
       return df_year
-      
+load_data(str(selected_year))
