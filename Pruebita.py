@@ -49,4 +49,5 @@ if selected == 'Informe':
    def load_data(year):
       df = download_data()
       filt=(df["FECHA_UTC"] == selected_year)
-      return df[filt]
+      df[filt]
+      return df_LATITUD
