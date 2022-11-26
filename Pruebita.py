@@ -10,7 +10,7 @@ with st.sidebar:
       menu_title = 'Menú',
       options = ['Inicio','Informe','Equipo'],
    )
-if selected == "Inicio":
+#if selected == "Inicio":
 
    
    
