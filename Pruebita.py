@@ -46,13 +46,17 @@ if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
    selected_year=st.sidebar.selectbox('Fecha', list(reversed(range(1960,2021))))
-   def load_data(year):
-      df = download_data()
-      df=df.astype({'ANO':'str'})
+   def download_data():
+      url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
+      filename="Catalogo1960_2021.xlsx"
+      urllib.request.urlretrieve(url,filename)
+      df=pd.read_csv('Catalogo1960_2021.xlsx')
+      return df
+   c=download_data()
+   def load_data(year,c):
+      df = c
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
       df['LATITUD']= pd.to_numeric(df['LATITUD'])
-      grouped = df.groupby(df.ANO)
-      df_year = grouped.get_group(year)
       return df_year
-load_data(str(selected_year))
+load_data(selected_year)
