@@ -45,9 +45,11 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
-   selected_year=st.sidebar.selectbox('Fecha', list(reversed(range(1960,2022))))
+   selected_year=st.sidebar.selectbox('Fecha', list(reversed(range(1960,2021))))
    def load_data(year):
       df = download_data()
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
-      return df_LATITUD
+      df['LATITUD']= pd.to_numeric(df['LATITUD'])
+      return df_year
+      
