@@ -17,7 +17,7 @@ with st.sidebar:
    )
    
 if selected == 'Inicio':
-   st.markdown("<h1 style ='text-aling: center'> Título:</h1>", unnsafe_allow_htm1= True)
+   st.markdown("<h1 style ='text-align: center'> Titulo:</h1>", unsafe_allow_htm1= True)
    st.markdown("---")
    st.header("Dataset")
    
