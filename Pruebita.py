@@ -54,7 +54,6 @@ if selected == 'Informe':
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
       df['LATITUD']= pd.to_numeric(df['LATITUD'])
-      return df_year
 download_data()
  
 
