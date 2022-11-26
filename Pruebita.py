@@ -10,7 +10,7 @@ with st.sidebar:
    st.sidebar.header('Programación avanzada')
    selected = option_menu(
       menu_title = 'Menú',
-      options = ['Inicio','Informe','Equipo'],
+      option = ['Inicio','Informe','Equipo'],
       icons = ['house','book','book','people'],
       menu_icon = 'cast',
       default_index = 0,
