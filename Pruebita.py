@@ -3,12 +3,12 @@ import streamlit as st
 import urllib.request
 import pandas as pd
 import numpy as np
-from streamlit_option_menu import option_menu
+from streamlit_options_menu import options_menu
 
 with st.sidebar:
    st.markdown("###")
    st.sidebar.header('Programación avanzada')
-   selected = option_menu(
+   selected = options_menu(
       menu_title = 'Menú',
       options = ['Inicio','Informe','Equipo'],
       icons = ['house','book','book','people'],
