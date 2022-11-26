@@ -22,7 +22,7 @@ if selected == 'Inicio':
    st.header("Dataset")
    
    def download_data():
-   url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
+   url='https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
    filename="Catalogo1960_2021.xlsx"
    urllib.request.urlretrieve(url,filename)
    df=pd.read_csv('Catalogo1960_2021.xlsx')
