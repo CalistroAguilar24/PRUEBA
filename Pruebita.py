@@ -53,7 +53,7 @@ if selected == 'Informe':
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
-      return df_['LATITUD']
+      return selected_year
       
 download_data()
  
