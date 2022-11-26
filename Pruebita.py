@@ -49,5 +49,4 @@ if selected == 'Informe':
    def load_data(year):
       df = download_data()
       filt=(df["FECHA_UTC"] == selected_year)
-      df[filt]
-   return df_year
+   return df[filt]
