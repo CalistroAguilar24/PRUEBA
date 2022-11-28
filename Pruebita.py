@@ -59,7 +59,7 @@ if selected == 'Equipo':
    st.markdown("<h1 style ='text-align: center'> Integrantes:</h1>", unsafe_allow_html= True)
    st.markdown("---")
    col1, col2, col3, col4 = st.columns(4)
-	image1 = Image.open('DgDsFUKWsAA6k8z.jpg')
+	image1 = Image.open('b9fd20744ad6f008787ffed46a0b7149--s-cartoons-bart-simpson.jpg')
 	col1.header("Miguel Calistro")
 	col1.image(image1, use_column_width=True)
 	grayscale = image1.convert('LA')
