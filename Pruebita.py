@@ -54,7 +54,30 @@ if selected == 'Informe':
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       filt=(df["FECHA_UTC"] == selected_year)
       df[filt]
-download_data()
+   download_data()
+if selected == 'Equipo':
+   st.markdown("<h1 style ='text-align: center'> Integrantes:</h1>", unsafe_allow_html= True)
+   st.markdown("---")
+   col1, col2, col3, col4 = st.columns(4)
+	image1 = Image.open('DgDsFUKWsAA6k8z.jpg')
+	col1.header("Miguel Calistro")
+	col1.image(image1, use_column_width=True)
+	grayscale = image1.convert('LA')
+	col2.image(grayscale, use_column_width=True)
+	image2 = Image.open('273-2736237_20-lisa-simpson-tumblr-listening-to-headphones-pictures.png')
+	col3.header("Brigytt Contreras")
+	col3.image(image2, use_column_width=True)
+	grayscale = image2.convert('LA')
+	col4.image(grayscale, use_column_width=True)
+   
+   col5, col6 = st.columns(2)
+	image5 = Image.open('mqdefault.jpg')
+	col5.header("Daniel Chamorro")
+	col5.image(image5, use_column_width=True)
+	grayscale = image5.convert('LA')
+	col6.image(grayscale, use_column_width=True)
+	
+   
 
  
 
