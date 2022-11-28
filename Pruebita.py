@@ -10,7 +10,7 @@ from PIL import Image
 
 with st.sidebar:
    st.sidebar.header('Programación avanzada')
-   image = Image.open('Cayetanofachada.jpg')
+   image = Image.open('Logo_Oficial (1).png')
    st.image(image,use_column_width=True)
    selected = option_menu(
       menu_title = 'Menú',
