@@ -9,8 +9,9 @@ from PIL import Image
 #@st.experimental_memo
 
 with st.sidebar:
-   st.markdown("CATALOGO SISMICO 1960-2021 (IGP)")
    st.sidebar.header('Programación avanzada')
+   image = Image.open('Cayetanofachada.jpg')
+   st.image(image,use_column_width=True)
    selected = option_menu(
       menu_title = 'Menú',
       options = ['Inicio','Informe','Equipo'],
