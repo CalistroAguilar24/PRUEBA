@@ -61,6 +61,15 @@ if selected == 'Informe':
    st.title('Gráfico de Epicentro vs Fecha_UTC')
    st.write('')
    st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   st.title('Gráfico de Magnitud vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
+   st.title('Gráfico de Fecha_UTC vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
+   st.title('Gráfico de Profundidad vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
    
    def load_data(year):
