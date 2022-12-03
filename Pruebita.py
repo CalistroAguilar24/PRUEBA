@@ -56,9 +56,9 @@ if selected == 'Informe':
       filt=(df["FECHA_UTC"]==selected_year)
       return df[filt]
    x=download_data(selected_year)
-   
    st.table(x)
-   depar=st.sidebar.selectbox('DEPARTAMENTO',list(reversed(range('1','10')))
+   
+   depar=st.sidebar.selectbox('Magnitud',list(reversed(range('1','10')))
    
       
 #if selected == 'Equipo':
