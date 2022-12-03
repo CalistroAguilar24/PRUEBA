@@ -39,38 +39,71 @@ if selected == 'Inicio':
    st.dataframe(c)
    st.subheader("Características del Dataset")
    st.write(c.describe())
-   #url del archivo en formato raw
-   url = 'https://raw.githubusercontent.com/brigytt/G_PROGRA/main/Catalogo1960_2021.csv'
-   datos = pd.read_csv(url,sep= ',')
-   st.line_chart(data=datos, x='FECHA_UTC', y='MAGNITUD')
    
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
+   selected_year=st.sidebar.selectbox('FECHA_UTC', list(reversed(range(1960,2022))))
    def download_data():
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
       urllib.request.urlretrieve(url,filename)
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       return df
-   year=st.sidebar.selectbox('Año', list(reversed(range(1960,2022))))
-   mes= st.sidebar.selectbox('Mes', list(reversed(range(1,12))))
-   dia= st.sidebar.selectbox('Día',list(reversed(range(1,31)))) 
+   c=download_data()
+   st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+   st.dataframe(c)
+   st.subheader("Características del Dataset")
+   st.write(c.describe())
    
-#if selected == 'Equipo':
-   #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
-   #st.markdown("---")
-   #st.write('Somos un grupo de estudiantes del V ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruano Cayetano Heredia (UPCH). Mediante el procesamiento y visualización de datos se brindará todos los parámetros que caracterizan un sismo con el objetivo de constituirse como una base útil para la realización de estudios en sismología.')
-   #col1, col2, col3= st.columns(3)
-   #image1 = Image.open('f238361e-ccb8-48d1-8993-1de25db1c866.jpg')
-   #col1.header("Miguel Calistro Aguilar")
-   #col1.image(image1, use_column_width=True)
-   #image2 = Image.open('WhatsApp Image 2022-11-27 at 23.17.23.jpeg')
-   #col2.header("Brigytt Contreras Melgar")
-   #col2.image(image2, use_column_width=True)
-   #image3 = Image.open('WhatsApp Image 2022-11-28 at 19.18.22.jpeg')
-   #col3.header("Daniel Chamorro Grados")
-   #col3.image(image3, use_column_width=True)
+   def load_data(year):
+      df=download_data()
+      df=df.astype({'FECHA_UTC':'str'})
+      df['MAGNITUD']= pd.to_numeric(df['MAGNITUD'])
+      df['LATITUD']= pd.to_numeric(df['LATITUD'])
+      df['LONGITUD']= pd.to_numeric(df['LONGITUD'])
+      grouped = df.groupby(df.FECHA_UTC)
+      df_year = grouped.get_group(year)
+      return df_year
+
+   data_by_year= load_data(str(selected_year))
+	
+   sorted_unique_district = sorted(data_by_year.DEPARTAMENTO.unique())
+   selected_district=st.sidebar.multiselect('Departamento', sorted_unique_district, sorted_unique_district)
+   
+   unique_contaminant=['MAGNITUD', 'LATITUD', 'LONGITUD']
+   selected_contaminant=st.sidebar.multiselect('Contaminante', unique_contaminant, unique_contaminant)
+ 
+   df_selected=data_by_year[(data_by_year.DEPARTAMENTO.isin(selected_district))]
+   def remove_columns(dataset, cols):
+      return dataset.drop(cols, axis=1)
+
+   cols=np.setdiff1d(unique_contaminant, selected_contaminant)
+   st.subheader('Mostrar data de distrito(s) y contaminante(s) seleccionado(s)')
+   data=remove_columns(df_selected, cols)
+   st.write('Dimensiones: ' + str(data.shape[0]) + ' filas y ' + str(data.shape[1]) + ' columnas')
+   st.dataframe(data)
+	
+   set_departamentos = np.sort(c['DEPARTAMENTO'].dropna().unique())
+   #Seleccion del departamento
+   opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
+   df_departamentos = c[c['DEPARTAMENTO'] == opcion_departamento]
+   num_filas = len(df_departamentos.axes[0]) 
+
+if selected == 'Equipo':
+   st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
+   st.markdown("---")
+   st.write('Somos un grupo de estudiantes del V ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruano Cayetano Heredia (UPCH). Mediante el procesamiento y visualización de datos se brindará todos los parámetros que caracterizan un sismo con el objetivo de constituirse como una base útil para la realización de estudios en sismología.')
+   col1, col2, col3= st.columns(3)
+   image1 = Image.open('f238361e-ccb8-48d1-8993-1de25db1c866.jpg')
+   col1.header("Miguel Calistro Aguilar")
+   col1.image(image1, use_column_width=True)
+   image2 = Image.open('WhatsApp Image 2022-11-27 at 23.17.23.jpeg')
+   col2.header("Brigytt Contreras Melgar")
+   col2.image(image2, use_column_width=True)
+   image3 = Image.open('WhatsApp Image 2022-11-28 at 19.18.22.jpeg')
+   col3.header("Daniel Chamorro Grados")
+   col3.image(image3, use_column_width=True)
    
    
 
