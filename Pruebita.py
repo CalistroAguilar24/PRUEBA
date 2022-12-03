@@ -55,6 +55,13 @@ if selected == 'Informe':
    st.dataframe(c)
    st.subheader("Características del Dataset")
    st.write(c.describe())
+   #url archivo raw
+   url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
+   datos=pd.read_csv(url, sep=',')
+   st.title('Gráfico de Epicentro vs Fecha_UTC')
+   st.write('')
+   st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   
    
    def load_data(year):
       df=download_data()
@@ -89,6 +96,8 @@ if selected == 'Informe':
    opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
    df_departamentos = c[c['DEPARTAMENTO'] == opcion_departamento]
    num_filas = len(df_departamentos.axes[0]) 
+   
+   
 
 if selected == 'Equipo':
    st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
