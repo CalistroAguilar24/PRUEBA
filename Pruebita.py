@@ -48,7 +48,8 @@ if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
    selected_year=st.sidebar.selectbox('Año', list(reversed(range(1960,2022))))
-   select_depar=st.sidebar.selectbox('DEPARTAMENTO',list(reversed(range('1','10')))
+   depar=st.sidebar.selectbox('DEPARTAMENTO',list(reversed(range('1','10')))
+                                     
    def download_data(selected_year):
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
