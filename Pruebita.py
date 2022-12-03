@@ -43,52 +43,20 @@ if selected == 'Inicio':
    url = 'https://raw.githubusercontent.com/brigytt/G_PROGRA/main/Catalogo1960_2021.csv'
    datos = pd.read_csv(url,sep= ',')
    st.line_chart(data=datos, x='FECHA_UTC', y='MAGNITUD')
+   
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
    selected_year=st.sidebar.selectbox('Año', list(reversed(range(1960,2022))))
-   def download_data():
+   def download_data(selected_year):
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
       urllib.request.urlretrieve(url,filename)
       df=pd.read_csv('Catalogo1960_2021.xlsx')
-      return df
-   c=download_data()
-   def load_data(year):
-      df = download_data()
-      df = df.astype({'FECHA_UTC':'str'})
-      df['MAGNITUD']= lib.maybe_convert_numeric(df['MAGNITUD'])
-      df['PROFUNDIDAD']= lib.maybe_convert_numeric(df['PROFUNDIDAD'])
-      df['EPICENTRO']= lib.maybe_convert_numeric(df['EPICENTRO'])
-      grouped = df.groupby(df.FECHA_UTC)
-      df_year = gruped.get_group(year)
-      return df_year
-   data_by_year= load_data(str(selected_year))
-   
-   sorted_unique_departament = sorted(data_by_year.DEPARTAMENTO.unique())
-   selected_departament=st.sidebar.multiselect('Departamento', sorted_unique_departament, sorted_unique_departament)
+      filt=(df["FECHA_UTC"]==selected_year)
+      return df[filt]
+   download_data(selected_year)
       
-   unique_contaminant=['MAGNITUD', 'PROFUNDIDAD','EPICENTRO']
-   selected_carac=st.sidebar.multiselect('Características', unique_carac, unique_carac)
-   
-   df_selected=data_by_year[(data_by_year.DEPARTAMENTO.isin(selected_departament))]
-   
-   def remove_columns(dataset, cols):
-      return dataset.drop(cols, axis=1)
-   
-   cols=np.setdiff1d(unique_carac, selected_carac)
-   
-   st.subheader('Mostrar data de Magnitud , Profundidad y Epicentro')
-   data=remove_columns(df_selected, cols)
-   st.write('Dimensiones: ' + str(data.shape[0]) + ' filas y ' + str(data.shape[1]) + ' columnas')
-   st.dataframe(data)
-   
-   set_departamentos = np.sort(c['DEPARTAMENTO'].dropna().unique())
-   #Seleccion del departamento
-   opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
-   df_departamentos = c[c['DEPARTAMENTO'] == opcion_departamento]
-   num_filas = len(df_departamentos.axes[0]) 
-   
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
    #st.markdown("---")
