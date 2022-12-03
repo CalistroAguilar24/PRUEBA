@@ -55,9 +55,16 @@ if selected == 'Informe':
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       filt=(df["FECHA_UTC"]==selected_year)
       return df[filt]
-   x=download_data(str(selected_year))
+   x=download_data(selected_year)
    st.table(x)
    
+   sorted_unique_district = sorted(data_by_year.DEPARTAMENTO.unique())
+   selected_district=st.sidebar.multiselect('Departamento', sorted_unique_district, sorted_unique_district)
+   
+   df_selected=data_by_year[(data_by_year.DEPARTAMENTO.isin(selected_district))]
+   
+   def remove_columns(dataset, cols):
+   return dataset.drop(cols, axis=1)
       
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
