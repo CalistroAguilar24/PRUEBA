@@ -55,7 +55,8 @@ if selected == 'Informe':
       df=pd.read_csv('Catalogo1960_2021.xlsx')
       filt=(df["FECHA_UTC"]==selected_year)
       return df[filt]
-   download_data(selected_year)
+   x=download_data(selected_year)
+   st.table(x)
       
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
