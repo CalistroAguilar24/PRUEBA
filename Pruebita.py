@@ -59,6 +59,7 @@ if selected == 'Informe':
       df = df.astype({'FECHA_UTC':'str'})
       df['MAGNITUD']= pd.to_numeric(df['MAGNITUD'])
       df['PROFUNDIDAD']= pd.to_numeric(df['PROFUNDIDAD'])
+      df['EPICENTRO']= pd.to_numeric(df['EPICENTRO'])
       grouped = df.groupby(df.FECHA_UTC)
       df_year = gruped.get_group(year)
       return df_year
@@ -67,7 +68,7 @@ if selected == 'Informe':
    sorted_unique_departament = sorted(data_by_year.DEPARTAMENTO.unique())
    selected_departament=st.sidebar.multiselect('Departamento', sorted_unique_departament, sorted_unique_departament)
       
-   unique_contaminant=['MAGNITUD', 'PROFUNDIDAD']
+   unique_contaminant=['MAGNITUD', 'PROFUNDIDAD','EPICENTRO']
    selected_carac=st.sidebar.multiselect('Características', unique_carac, unique_carac)
    
    df_selected=data_by_year[(data_by_year.DEPARTAMENTO.isin(selected_departament))]
