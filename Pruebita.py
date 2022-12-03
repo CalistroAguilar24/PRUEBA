@@ -83,6 +83,12 @@ if selected == 'Informe':
    st.write('Dimensiones: ' + str(data.shape[0]) + ' filas y ' + str(data.shape[1]) + ' columnas')
    st.dataframe(data)
    
+   set_departamentos = np.sort(c['DEPARTAMENTO'].dropna().unique())
+   #Seleccion del departamento
+   opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
+   df_departamentos = c[c['DEPARTAMENTO'] == opcion_departamento]
+   num_filas = len(df_departamentos.axes[0]) 
+   
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
    #st.markdown("---")
