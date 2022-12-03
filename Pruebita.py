@@ -57,9 +57,6 @@ if selected == 'Informe':
       return df[filt]
    x=download_data(selected_year)
    st.table(x)
-   
-   depar=st.sidebar.selectbox('Magnitud',list(reversed(range('1','10')))
-   
       
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
