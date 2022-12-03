@@ -47,9 +47,23 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
-   selected_year=st.sidebar.selectbox('Año', list(reversed(range(1960,2022))))
-   selected_mes= st.sidebar.selectbox('Mes', list(reversed(range(1,12))))
-   selected_dia= st.sidebar.selectbox('Día',list(reversed(range(1,31))))
+   year=st.sidebar.selectbox('Año', list(reversed(range(1960,2022))))
+   mes= st.sidebar.selectbox('Mes', list(reversed(range(1,12))))
+   dia= st.sidebar.selectbox('Día',list(reversed(range(1,31))))
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 #if selected == 'Equipo':
    #st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
    #st.markdown("---")
