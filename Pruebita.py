@@ -57,9 +57,9 @@ if selected == 'Informe':
    def load_data(year):
       df = download_data()
       df = df.astype({'FECHA_UTC':'str'})
-      df['MAGNITUD']= pd.to_numeric(df['MAGNITUD'])
-      df['PROFUNDIDAD']= pd.to_numeric(df['PROFUNDIDAD'])
-      df['EPICENTRO']= pd.to_numeric(df['EPICENTRO'])
+      df['MAGNITUD']= lib.maybe_convert_numeric(df['MAGNITUD'])
+      df['PROFUNDIDAD']= lib.maybe_convert_numeric(df['PROFUNDIDAD'])
+      df['EPICENTRO']= lib.maybe_convert_numeric(df['EPICENTRO'])
       grouped = df.groupby(df.FECHA_UTC)
       df_year = gruped.get_group(year)
       return df_year
