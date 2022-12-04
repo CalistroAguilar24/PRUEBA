@@ -61,19 +61,12 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('AREQUIPA','',''))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','',''))
    df_visualizacion = None
    estado = '-'
-   datos_Ayabaca= pd.read_csv('Paaaa.csv')
-   if opcion_dataset == 'AREQUIPA':
+   datos_Ayabaca= pd.read_csv('Amazona.csv')
+   if opcion_dataset == 'AMAZONAS':
       df_visualizacion = datos_Ayabaca
-      #estado = 'aprobados'
-   #elif opcion_dataset == 'Proyectos desaprobados':
-	#df_visualizacion = df_desaprobado
-	#estado = 'desaprobados'
-   #elif opcion_dataset == 'Proyectos en evaluacion':
-	#df_visualizacion = df_evaluacion
-	#estado = 'en evaluación'
    t1 = '• Cantidad de cuencas según los '+estado+'' 
    st.dataframe(df_visualizacion)
    
