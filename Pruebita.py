@@ -177,7 +177,7 @@ if selected == 'Informe':
    if opcion_dataset == 'ECUADOR':
       df_visualizacion = datos_Ecuador
       st.dataframe(df_visualizacion)
-
+   
    
    
    #url archivo raw
@@ -195,6 +195,10 @@ if selected == 'Informe':
    st.subheader('Gráfico de Profundidad vs Departamento')
    st.write('')
    st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
+	
+   Fecha_UTC=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
+   st.write(datos.loc[datos['EPICENTRO'] == Fecha_UTC])
+   
 	
 
 if selected == 'Equipo':
