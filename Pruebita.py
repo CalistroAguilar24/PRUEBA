@@ -81,7 +81,7 @@ if selected == 'Informe':
       df_visualizacion = datos_Ayacucho
    
    #DATOS POR PAÍS
-   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA'))
+   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA',"",""))
    df_visualizacion = None
    estado = '-'
    datos_Bolivia= pd.read_csv('Bolivia.csv')
