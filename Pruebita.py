@@ -61,19 +61,68 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('XD','AMAZONAS','ANCASH','APURIMAC'))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','','','','','','','','',''))
    df_visualizacion = None
    estado = '-'
-   datos_XD= pd.read_csv('XD')
-   if opcion_dataset == 'XD':
-      df_visualizacion = datos_XD
-   datos_Amazonas= pd.read_csv('Amazona.csv')
+   datos_Amazonas= pd.read_csv('Amazonas.csv')
    if opcion_dataset == 'AMAZONAS':
       df_visualizacion = datos_Amazonas
    datos_Ancash= pd.read_csv('Ancash.csv')
    if opcion_dataset == 'ANCASH':
       df_visualizacion = datos_Ancash
+   datos_Apurimac= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+   datos_Arequipa= pd.read_csv('Arequipa.csv')
+   if opcion_dataset == 'AREQUIPA':
+      df_visualizacion = datos_Ancash
+   datos_Ayacucho= pd.read_csv('Ayacucho.csv')
+   if opcion_dataset == 'AYACUCHO':
+      df_visualizacion = datos_Ancash
+
    datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+   datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash 
+   datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+   datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+   datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+   datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+      datos_Ancash= pd.read_csv('Apurimac.csv')
+   if opcion_dataset == 'APURIMAC':
+      df_visualizacion = datos_Ancash
+       datos_Ancash= pd.read_csv('Apurimac.csv')
    if opcion_dataset == 'APURIMAC':
       df_visualizacion = datos_Ancash
    
