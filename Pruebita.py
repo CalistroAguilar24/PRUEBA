@@ -85,12 +85,12 @@ if selected == 'Informe':
    datos_Cuzco= pd.read_csv('Cuzco.csv')
    if opcion_dataset == 'CUZCO':
       df_visualizacion = datos_Cuzco
-   datos_= pd.read_csv('')
-   if opcion_dataset == '':
-      df_visualizacion = datos_
-   datos_= pd.read_csv('')
-   if opcion_dataset == '':
-      df_visualizacion = datos_
+   #datos_= pd.read_csv('')
+   #if opcion_dataset == '':
+      #df_visualizacion = datos_
+   #datos_= pd.read_csv('')
+   #if opcion_dataset == '':
+      #df_visualizacion = datos_
    datos_Piura= pd.read_csv('Piura.csv')
    if opcion_dataset == 'PIURA':
       df_visualizacion = datos_Piura
@@ -124,12 +124,12 @@ if selected == 'Informe':
    datos_Chile= pd.read_csv('Chile.csv')
    if opcion_dataset == 'CHILE':
       df_visualizacion = datos_Chile
-   datos_= pd.read_csv('')
-   if opcion_dataset == '':
-      df_visualizacion = datos_
-   datos_= pd.read_csv('')
-   if opcion_dataset == '':
-      df_visualizacion = datos_
+   #datos_= pd.read_csv('')
+   #if opcion_dataset == '':
+      #df_visualizacion = datos_
+   #datos_= pd.read_csv('')
+   #if opcion_dataset == '':
+      #df_visualizacion = datos_
 
    
    
