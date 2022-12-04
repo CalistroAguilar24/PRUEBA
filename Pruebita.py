@@ -61,11 +61,11 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('','AMAZONAS','ANCASH','APURIMAC'))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('XD','AMAZONAS','ANCASH','APURIMAC'))
    df_visualizacion = None
    estado = '-'
-   datos_XD= pd.read_csv('')
-   if opcion_dataset == '':
+   datos_XD= pd.read_csv('XD')
+   if opcion_dataset == 'XD':
       df_visualizacion = datos_XD
    datos_Amazonas= pd.read_csv('Amazona.csv')
    if opcion_dataset == 'AMAZONAS':
