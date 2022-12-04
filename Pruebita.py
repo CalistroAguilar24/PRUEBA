@@ -43,18 +43,18 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
-   selected_year=st.sidebar.selectbox('FECHA_UTC', list(reversed(range(1960,2022))))
-   #def download_data():
-      #url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
-      #filename="Catalogo1960_2021.xlsx"
-      #urllib.request.urlretrieve(url,filename)
-      #df=pd.read_csv('Catalogo1960_2021.xlsx')
-      #return df
-   #c=download_data()
-   #st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
-   #st.dataframe(c)
-   #st.subheader("Características del Dataset")
-   #st.write(c.describe())
+   
+   def download_data():
+      url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
+      filename="Catalogo1960_2021.xlsx"
+      urllib.request.urlretrieve(url,filename)
+      df=pd.read_csv('Catalogo1960_2021.xlsx')
+      return df
+   c=download_data()
+   st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+   st.dataframe(c)
+   st.subheader("Características del Dataset")
+   st.write(c.describe())
 	
    #DATOS DE CADA DEPARTAMENTO
    #df_latlog= pd.read_csv('latylog progra.csv')
@@ -75,30 +75,23 @@ if selected == 'Informe':
 	#estado = 'en evaluación'
    t1 = '• Cantidad de cuencas según los '+estado+'' 
    st.dataframe(df_visualizacion)
-   st.subheader(t1)
-   df_cuenca_freq = pd.DataFrame(df_visualizacion["DEPARTAMENTO"].value_counts())
-   st.bar_chart(df_cuenca_freq)
-   st.write('Figura 3. Gráfica del nombre de cuencas en la provincia seleccionada')
-   st.markdown("---")
    
-
-
-
+   
    #url archivo raw
-   #url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
-   #datos=pd.read_csv(url, sep=',')
-   #st.subheader('Gráfico de Epicentro vs Fecha_UTC')
-   #st.write('')
-   #st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
-   #st.subheader('Gráfico de Magnitud vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Fecha_UTC vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Profundidad vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
+   url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
+   datos=pd.read_csv(url, sep=',')
+   st.subheader('Gráfico de Epicentro vs Fecha_UTC')
+   st.write('')
+   st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   st.subheader('Gráfico de Magnitud vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Fecha_UTC vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Profundidad vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
    
   
