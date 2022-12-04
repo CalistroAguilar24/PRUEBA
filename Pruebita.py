@@ -55,6 +55,31 @@ if selected == 'Informe':
    st.dataframe(c)
    st.subheader("Características del Dataset")
    st.write(c.describe())
+	
+   #DATOS DE CADA PROVINCIA
+   df_latlog= pd.read_csv('latylog progra.csv')
+   datos_Ayabaca= pd.read_csv('Ayabaca_Piura3.csv')
+   datos_Morropon= pd.read_csv('Morropon_Piura.csv')
+
+   opcion_dataset = st.selectbox
+   ('¿Qué dataset deseas visualizar?',
+   ('Proyectos aprobados',
+   'Proyectos desaprobados',
+   'Proyectos en evaluacion')
+    )
+   df_visualizacion = None
+   estado = '-'
+   if opcion_dataset == 'Proyectos aprobados':
+	df_visualizacion = df_aprobado
+	estado = 'aprobados'
+   elif opcion_dataset == 'Proyectos desaprobados':
+	df_visualizacion = df_desaprobado
+	estado = 'desaprobados'
+   elif opcion_dataset == 'Proyectos en evaluacion':
+	df_visualizacion = df_evaluacion
+	estado = 'en evaluación'
+
+
    #url archivo raw
    url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
    datos=pd.read_csv(url, sep=',')
@@ -72,40 +97,7 @@ if selected == 'Informe':
    st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
    
-   def load_data(year):
-      df=download_data()
-      df=df.astype({'FECHA_UTC':'str'})
-      df['MAGNITUD']= pd.to_numeric(df['MAGNITUD'])
-      df['LATITUD']= pd.to_numeric(df['LATITUD'])
-      df['LONGITUD']= pd.to_numeric(df['LONGITUD'])
-      grouped = df.groupby(df.FECHA_UTC)
-      df_year = grouped.get_group(year)
-      return df_year
-
-   data_by_year= load_data(str(selected_year))
-	
-   sorted_unique_district = sorted(data_by_year.DEPARTAMENTO.unique())
-   selected_district=st.sidebar.multiselect('Departamento', sorted_unique_district, sorted_unique_district)
-   
-   unique_contaminant=['MAGNITUD', 'LATITUD', 'LONGITUD']
-   selected_contaminant=st.sidebar.multiselect('Contaminante', unique_contaminant, unique_contaminant)
- 
-   df_selected=data_by_year[(data_by_year.DEPARTAMENTO.isin(selected_district))]
-   def remove_columns(dataset, cols):
-      return dataset.drop(cols, axis=1)
-
-   cols=np.setdiff1d(unique_contaminant, selected_contaminant)
-   st.subheader('Mostrar data de distrito(s) y contaminante(s) seleccionado(s)')
-   data=remove_columns(df_selected, cols)
-   st.write('Dimensiones: ' + str(data.shape[0]) + ' filas y ' + str(data.shape[1]) + ' columnas')
-   st.dataframe(data)
-	
-   set_departamentos = np.sort(c['DEPARTAMENTO'].dropna().unique())
-   #Seleccion del departamento
-   opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
-   df_departamentos = c[c['DEPARTAMENTO'] == opcion_departamento]
-   num_filas = len(df_departamentos.axes[0]) 
-   
+  
    
 
 if selected == 'Equipo':
