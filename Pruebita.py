@@ -64,7 +64,7 @@ if selected == 'Informe':
    df_visualizacion = None
    estado = '-'
    datos_Ayabaca= pd.read_csv('Paaaa.csv')
-   if opcion_dataset == 'Proyectos aprobados':
+   if opcion_dataset == 'AREQUIPA':
       df_visualizacion = datos_Ayabaca
       estado = 'aprobados'
    #elif opcion_dataset == 'Proyectos desaprobados':
