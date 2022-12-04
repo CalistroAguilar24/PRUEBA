@@ -61,12 +61,17 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','XD','XDD'))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','XDD'))
    df_visualizacion = None
    estado = '-'
-   datos_Ayabaca= pd.read_csv('Amazona.csv')
+   datos_Amazonas= pd.read_csv('Amazona.csv')
    if opcion_dataset == 'AMAZONAS':
-      df_visualizacion = datos_Ayabaca
+      df_visualizacion = datos_Amazonas
+   t1 = '• Cantidad de cuencas según los '+estado+'' 
+   st.dataframe(df_visualizacion)
+   datos_Ancash= pd.read_csv('Ancash.csv')
+   if opcion_dataset == 'ANCASH':
+      df_visualizacion = datos_Ancash
    t1 = '• Cantidad de cuencas según los '+estado+'' 
    st.dataframe(df_visualizacion)
    
