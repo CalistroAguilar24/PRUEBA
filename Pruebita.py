@@ -139,6 +139,8 @@ if selected == 'Informe':
    datos_Ucayali= pd.read_csv('Ucayali.csv')
    if opcion_dataset == 'UCAYALI':
       df_visualizacion = datos_Ucayali
+   t1 = '• Cantidad de cuencas según los '+estado+'' 
+   st.dataframe(df_visualizacion)
    
    #DATOS POR PAÍS
    opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA','BRASIL','CHILE','COLOMBIA','ECUADOR'))
