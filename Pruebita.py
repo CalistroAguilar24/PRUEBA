@@ -58,16 +58,16 @@ if selected == 'Informe':
    #url archivo raw
    url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
    datos=pd.read_csv(url, sep=',')
-   st.title('Gráfico de Epicentro vs Fecha_UTC')
+   st.subheader('Gráfico de Epicentro vs Fecha_UTC')
    st.write('')
    st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
-   st.title('Gráfico de Magnitud vs Departamento')
+   st.subheader('Gráfico de Magnitud vs Departamento')
    st.write('')
    st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
-   st.title('Gráfico de Fecha_UTC vs Departamento')
+   st.subheader('Gráfico de Fecha_UTC vs Departamento')
    st.write('')
    st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
-   st.title('Gráfico de Profundidad vs Departamento')
+   st.subheader('Gráfico de Profundidad vs Departamento')
    st.write('')
    st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
