@@ -70,8 +70,8 @@ if selected == 'Informe':
    df_visualizacion = None
    estado = '-'
    if opcion_dataset == 'Proyectos aprobados':
-	df_visualizacion = datos_Ayabaca
-	estado = 'aprobados'
+      df_visualizacion = datos_Ayabaca
+      estado = 'aprobados'
    #elif opcion_dataset == 'Proyectos desaprobados':
 	#df_visualizacion = df_desaprobado
 	#estado = 'desaprobados'
