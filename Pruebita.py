@@ -67,80 +67,103 @@ if selected == 'Informe':
    datos_Amazonas= pd.read_csv('Amazonas.csv')
    if opcion_dataset == 'AMAZONAS':
       df_visualizacion = datos_Amazonas
+      st.dataframe(df_visualizacion)
    datos_Ancash= pd.read_csv('Ancash.csv')
    if opcion_dataset == 'ANCASH':
       df_visualizacion = datos_Ancash
+      st.dataframe(df_visualizacion)
    datos_Apurimac= pd.read_csv('Apurimac.csv')
    if opcion_dataset == 'APURIMAC':
       df_visualizacion = datos_Apurimac
+      st.dataframe(df_visualizacion)
    datos_Arequipa= pd.read_csv('Arequipa.csv')
    if opcion_dataset == 'AREQUIPA':
       df_visualizacion = datos_Arequipa
+      st.dataframe(df_visualizacion)
    datos_Ayacucho= pd.read_csv('Ayacucho.csv')
    if opcion_dataset == 'AYACUCHO':
       df_visualizacion = datos_Ayacucho
+      st.dataframe(df_visualizacion)
    datos_Cajamarca= pd.read_csv('Cajamarca.csv')
    if opcion_dataset == 'CAJAMARCA':
       df_visualizacion = datos_Cajamarca
+      st.dataframe(df_visualizacion)
    datos_Callao= pd.read_csv('Callao.csv')
    if opcion_dataset == 'CALLAO':
       df_visualizacion = datos_Callao
+      st.dataframe(df_visualizacion)
    datos_Cuzco= pd.read_csv('Cuzco.csv')
    if opcion_dataset == 'CUZCO':
       df_visualizacion = datos_Cuzco
+      st.dataframe(df_visualizacion)
    datos_Huancavelica= pd.read_csv('Huancavelica.csv')
    if opcion_dataset == 'HUANCAVELICA':
       df_visualizacion = datos_Huancavelica
+      st.dataframe(df_visualizacion)
    datos_Huanuco= pd.read_csv('Huanuco.csv')
    if opcion_dataset == 'HUANUCO':
       df_visualizacion = datos_Huanuco
+      st.dataframe(df_visualizacion)
    datos_Ica= pd.read_csv('Ica.csv')
    if opcion_dataset == 'ICA':
       df_visualizacion = datos_Ica
+      st.dataframe(df_visualizacion)
    datos_Junin= pd.read_csv('Junin.csv')
    if opcion_dataset == 'JUNIN':
       df_visualizacion = datos_Junin
+      st.dataframe(df_visualizacion)
    datos_LaLibertad= pd.read_csv('La Libertad.csv')
    if opcion_dataset == 'LA LIBERTAD':
       df_visualizacion = datos_LaLibertad
+      st.dataframe(df_visualizacion)
    datos_Lambayeque= pd.read_csv('Lambayeque.csv')
    if opcion_dataset == 'LAMBAYEQUE':
       df_visualizacion = datos_Lambayeque
+      st.dataframe(df_visualizacion)
    datos_Lima= pd.read_csv('Lima.csv')
    if opcion_dataset == 'LIMA':
       df_visualizacion = datos_Lima
+      st.dataframe(df_visualizacion)
    datos_Loreto= pd.read_csv('Loreto.csv')
    if opcion_dataset == 'LORETO':
       df_visualizacion = datos_Loreto
+      st.dataframe(df_visualizacion)
    datos_MadredeDios= pd.read_csv('Madre de Dios.csv')
    if opcion_dataset == 'MADRE DE DIOS':
       df_visualizacion = datos_MadredeDios
+      st.dataframe(df_visualizacion)
    datos_Mar= pd.read_csv('Mar.csv')
    if opcion_dataset == 'MAR':
       df_visualizacion = datos_Mar
+      st.dataframe(df_visualizacion)
    datos_Pasco= pd.read_csv('Pasco.csv')
    if opcion_dataset == 'PASCO':
       df_visualizacion = datos_Pasco
+      st.dataframe(df_visualizacion)
    datos_Piura= pd.read_csv('Piura.csv')
    if opcion_dataset == 'PIURA':
       df_visualizacion = datos_Piura
+      st.dataframe(df_visualizacion)
    datos_Puno= pd.read_csv('Puno.csv')
    if opcion_dataset == 'PUNO':
       df_visualizacion = datos_Puno
+      st.dataframe(df_visualizacion)
    datos_SanMartin= pd.read_csv('San Martin.csv')
    if opcion_dataset == 'SAN MARTIN':
       df_visualizacion = datos_SanMartin
+      st.dataframe(df_visualizacion)
    datos_Tacna= pd.read_csv('Tacna.csv')
    if opcion_dataset == 'TACNA':
       df_visualizacion = datos_Tacna
+      st.dataframe(df_visualizacion)
    datos_Tumbes= pd.read_csv('Tumbes.csv')
    if opcion_dataset == 'TUMBES':
-      df_visualizacion = datos_Tumbes	
+      df_visualizacion = datos_Tumbes
+      st.dataframe(df_visualizacion)
    datos_Ucayali= pd.read_csv('Ucayali.csv')
    if opcion_dataset == 'UCAYALI':
       df_visualizacion = datos_Ucayali
-   t1 = '• Cantidad de cuencas según los '+estado+'' 
-   st.dataframe(df_visualizacion)
+      st.dataframe(df_visualizacion)
    
    #DATOS POR PAÍS
    opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA','BRASIL','CHILE','COLOMBIA','ECUADOR'))
@@ -149,19 +172,22 @@ if selected == 'Informe':
    datos_Bolivia= pd.read_csv('Bolivia.csv')
    if opcion_dataset == 'BOLIVIA':
       df_visualizacion = datos_Bolivia
+      st.dataframe(df_visualizacion)
    datos_Brasil= pd.read_csv('Brasil.csv')
    if opcion_dataset == 'BRASIL':
       df_visualizacion = datos_Brasil
+      st.dataframe(df_visualizacion)
    datos_Chile= pd.read_csv('Chile.csv')
    if opcion_dataset == 'CHILE':
       df_visualizacion = datos_Chile
+      st.dataframe(df_visualizacion)
    datos_Colombia= pd.read_csv('Colombia.csv')
    if opcion_dataset == 'COLOMBIA':
       df_visualizacion = datos_Colombia
+      st.dataframe(df_visualizacion)
    datos_Ecuador= pd.read_csv('Ecuador.csv')
    if opcion_dataset == 'ECUADOR':
       df_visualizacion = datos_Ecuador
-      #t1 = '• Cantidad de cuencas según los '+estado+'' 
       st.dataframe(df_visualizacion)
 
    
