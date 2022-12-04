@@ -58,12 +58,12 @@ if selected == 'Informe':
 	
    #DATOS DE CADA DEPARTAMENTO
    #df_latlog= pd.read_csv('latylog progra.csv')
-   datos_Ayabaca= pd.read_csv('Paaaa.csv')
    #datos_Morropon= pd.read_csv('Morropon_Piura.csv')
 
    opcion_dataset = st.selectbox('¿Qué dataset deseas visualizar?',('AREQUIPA','Proyectos desaprobados','Proyectos en evaluacion'))
    df_visualizacion = None
    estado = '-'
+   datos_Ayabaca= pd.read_csv('Paaaa.csv')
    if opcion_dataset == 'Proyectos aprobados':
       df_visualizacion = datos_Ayabaca
       estado = 'aprobados'
