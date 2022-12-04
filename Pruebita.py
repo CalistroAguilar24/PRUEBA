@@ -61,7 +61,7 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','','','','','','','','',''))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','SAN MARTIN','PUNO','CUZCO','PIURA','','','','',''))
    df_visualizacion = None
    estado = '-'
    datos_Amazonas= pd.read_csv('Amazonas.csv')
@@ -79,14 +79,57 @@ if selected == 'Informe':
    datos_Ayacucho= pd.read_csv('Ayacucho.csv')
    if opcion_dataset == 'AYACUCHO':
       df_visualizacion = datos_Ayacucho
+   datos_Cajamarca= pd.read_csv('Cajamarca.csv')
+   if opcion_dataset == 'CAJAMARCA':
+      df_visualizacion = datos_Cajamarca
+   datos_Cuzco= pd.read_csv('Cuzco.csv')
+   if opcion_dataset == 'CUZCO':
+      df_visualizacion = datos_Cuzco
+   datos_= pd.read_csv('')
+   if opcion_dataset == '':
+      df_visualizacion = datos_
+   datos_= pd.read_csv('')
+   if opcion_dataset == '':
+      df_visualizacion = datos_
+   datos_Piura= pd.read_csv('Piura.csv')
+   if opcion_dataset == 'PIURA':
+      df_visualizacion = datos_Piura
+   datos_Puno= pd.read_csv('Puno.csv')
+   if opcion_dataset == 'PUNO':
+      df_visualizacion = datos_Puno
+   datos_SanMartin= pd.read_csv('San Martin.csv')
+   if opcion_dataset == 'SAN MARTIN':
+      df_visualizacion = datos_SanMartin
+   datos_Tacna= pd.read_csv('Tacna.csv')
+   if opcion_dataset == 'TACNA':
+      df_visualizacion = datos_Tacna
+   datos_Tumbes= pd.read_csv('Tumbes.csv')
+   if opcion_dataset == 'TUMBES':
+      df_visualizacion = datos_Tumbes	
+   datos_Ucayali= pd.read_csv('Ucayali.csv')
+   if opcion_dataset == 'UCAYALI':
+      df_visualizacion = datos_Ucayali
+   
    
    #DATOS POR PAÍS
-   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA',"",""))
+   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA','BRASIL','CHILE','','','','','','',''))
    df_visualizacion = None
    estado = '-'
    datos_Bolivia= pd.read_csv('Bolivia.csv')
    if opcion_dataset == 'BOLIVIA':
       df_visualizacion = datos_Bolivia
+   datos_Brasil= pd.read_csv('Brasil.csv')
+   if opcion_dataset == 'BRASIL':
+      df_visualizacion = datos_Brasil
+   datos_Chile= pd.read_csv('Chile.csv')
+   if opcion_dataset == 'CHILE':
+      df_visualizacion = datos_Chile
+   datos_= pd.read_csv('')
+   if opcion_dataset == '':
+      df_visualizacion = datos_
+   datos_= pd.read_csv('')
+   if opcion_dataset == '':
+      df_visualizacion = datos_
 
    
    
@@ -95,21 +138,21 @@ if selected == 'Informe':
    st.dataframe(df_visualizacion)
    
    
-   ##url archivo raw
-   #url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
-   #datos=pd.read_csv(url, sep=',')
-   #st.subheader('Gráfico de Epicentro vs Fecha_UTC')
-   #st.write('')
-   #st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
-   #st.subheader('Gráfico de Magnitud vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Fecha_UTC vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Profundidad vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
+   #url archivo raw
+   url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
+   datos=pd.read_csv(url, sep=',')
+   st.subheader('Gráfico de Epicentro vs Fecha_UTC')
+   st.write('')
+   st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   st.subheader('Gráfico de Magnitud vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Fecha_UTC vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Profundidad vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
    
   
