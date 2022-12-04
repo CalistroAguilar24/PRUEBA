@@ -55,18 +55,19 @@ if selected == 'Informe':
    st.dataframe(c)
    st.subheader("Características del Dataset")
    st.write(c.describe())
-	
-   #DATOS DE CADA DEPARTAMENTO
-   #df_latlog= pd.read_csv('latylog progra.csv')
-   #datos_Morropon= pd.read_csv('Morropon_Piura.csv')
 
-   opcion_dataset = st.selectbox('¿Qué dataset deseas visualizar?',('AREQUIPA','Proyectos desaprobados','Proyectos en evaluacion'))
+   #DATOS POR FECHA
+   
+	
+   #DATOS POR DEPARTAMENTO
+
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AREQUIPA','',''))
    df_visualizacion = None
    estado = '-'
    datos_Ayabaca= pd.read_csv('Paaaa.csv')
    if opcion_dataset == 'AREQUIPA':
       df_visualizacion = datos_Ayabaca
-      estado = 'aprobados'
+      #estado = 'aprobados'
    #elif opcion_dataset == 'Proyectos desaprobados':
 	#df_visualizacion = df_desaprobado
 	#estado = 'desaprobados'
