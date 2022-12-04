@@ -56,28 +56,28 @@ if selected == 'Informe':
    st.subheader("Características del Dataset")
    st.write(c.describe())
 	
-   #DATOS DE CADA PROVINCIA
-   df_latlog= pd.read_csv('latylog progra.csv')
-   datos_Ayabaca= pd.read_csv('Ayabaca_Piura3.csv')
-   datos_Morropon= pd.read_csv('Morropon_Piura.csv')
+   #DATOS DE CADA DEPARTAMENTO
+   #df_latlog= pd.read_csv('latylog progra.csv')
+   datos_Ayabaca= pd.read_csv('PRUEBA.csv')
+   #datos_Morropon= pd.read_csv('Morropon_Piura.csv')
 
    opcion_dataset = st.selectbox
    ('¿Qué dataset deseas visualizar?',
-   ('Proyectos aprobados',
+   ('AREQUIPA',
    'Proyectos desaprobados',
    'Proyectos en evaluacion')
     )
    df_visualizacion = None
    estado = '-'
    if opcion_dataset == 'Proyectos aprobados':
-	df_visualizacion = df_aprobado
+	df_visualizacion = datos_Ayabaca
 	estado = 'aprobados'
-   elif opcion_dataset == 'Proyectos desaprobados':
-	df_visualizacion = df_desaprobado
-	estado = 'desaprobados'
-   elif opcion_dataset == 'Proyectos en evaluacion':
-	df_visualizacion = df_evaluacion
-	estado = 'en evaluación'
+   #elif opcion_dataset == 'Proyectos desaprobados':
+	#df_visualizacion = df_desaprobado
+	#estado = 'desaprobados'
+   #elif opcion_dataset == 'Proyectos en evaluacion':
+	#df_visualizacion = df_evaluacion
+	#estado = 'en evaluación'
 
 
    #url archivo raw
