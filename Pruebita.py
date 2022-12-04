@@ -61,7 +61,7 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','SAN MARTIN','PUNO','CUZCO','PIURA','','','','',''))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','CALLAO','SAN MARTIN','PUNO','CUZCO','PIURA','PASCO','HUANCAVELICA','HUANUCO','ICA','JUNIN'.'LA LIBERTAD'.'LAMBAYEQUE'.'LIMA'.'LORETO'.'MADRE DE DIOS','MAR'))
    df_visualizacion = None
    estado = '-'
    datos_Amazonas= pd.read_csv('Amazonas.csv')
@@ -82,15 +82,45 @@ if selected == 'Informe':
    datos_Cajamarca= pd.read_csv('Cajamarca.csv')
    if opcion_dataset == 'CAJAMARCA':
       df_visualizacion = datos_Cajamarca
+   datos_Callao= pd.read_csv('Callao.csv')
+   if opcion_dataset == 'CALLAO':
+      df_visualizacion = datos_Callao
    datos_Cuzco= pd.read_csv('Cuzco.csv')
    if opcion_dataset == 'CUZCO':
       df_visualizacion = datos_Cuzco
-   #datos_= pd.read_csv('')
-   #if opcion_dataset == '':
-      #df_visualizacion = datos_
-   #datos_= pd.read_csv('')
-   #if opcion_dataset == '':
-      #df_visualizacion = datos_
+   datos_Huancavelica= pd.read_csv('Huancavelica.csv')
+   if opcion_dataset == 'HUANCAVELICA':
+      df_visualizacion = datos_Huancavelica
+   datos_Huanuco= pd.read_csv('Huanuco.csv')
+   if opcion_dataset == 'HUANUCO':
+      df_visualizacion = datos_Huanuco
+   datos_Ica= pd.read_csv('Ica.csv')
+   if opcion_dataset == 'ICA':
+      df_visualizacion = datos_Ica
+   datos_Junin= pd.read_csv('Junin.csv')
+   if opcion_dataset == 'JUNIN':
+      df_visualizacion = datos_Junin
+   datos_LaLibertad= pd.read_csv('La Libertad.csv')
+   if opcion_dataset == 'LA LIBERTAD':
+      df_visualizacion = datos_LaLibertad
+   datos_Lambayeque= pd.read_csv('Lambayeque.csv')
+   if opcion_dataset == 'LAMBAYEQUE':
+      df_visualizacion = datos_Lambayeque
+   datos_Lima= pd.read_csv('Lima.csv')
+   if opcion_dataset == 'LIMA':
+      df_visualizacion = datos_Lima
+   datos_Loreto= pd.read_csv('Loreto.csv')
+   if opcion_dataset == 'LORETO':
+      df_visualizacion = datos_Loreto
+   datos_MadredeDios= pd.read_csv('Madre de Dios.csv')
+   if opcion_dataset == 'MADRE DE DIOS':
+      df_visualizacion = datos_MadredeDios
+   datos_Mar= pd.read_csv('Mar.csv')
+   if opcion_dataset == 'MAR':
+      df_visualizacion = datos_Mar
+   datos_Pasco= pd.read_csv('Pasco.csv')
+   if opcion_dataset == 'PASCO':
+      df_visualizacion = datos_Pasco
    datos_Piura= pd.read_csv('Piura.csv')
    if opcion_dataset == 'PIURA':
       df_visualizacion = datos_Piura
@@ -110,9 +140,8 @@ if selected == 'Informe':
    if opcion_dataset == 'UCAYALI':
       df_visualizacion = datos_Ucayali
    
-   
    #DATOS POR PAÍS
-   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA','BRASIL','CHILE','','','','','','',''))
+   opcion_dataset = st.selectbox('Eliga el país',('BOLIVIA','BRASIL','CHILE','COLOMBIA','ECUADOR'))
    df_visualizacion = None
    estado = '-'
    datos_Bolivia= pd.read_csv('Bolivia.csv')
@@ -124,16 +153,13 @@ if selected == 'Informe':
    datos_Chile= pd.read_csv('Chile.csv')
    if opcion_dataset == 'CHILE':
       df_visualizacion = datos_Chile
-   #datos_= pd.read_csv('')
-   #if opcion_dataset == '':
-      #df_visualizacion = datos_
-   #datos_= pd.read_csv('')
-   #if opcion_dataset == '':
-      #df_visualizacion = datos_
+   datos_Colombia= pd.read_csv('Colombia.csv')
+   if opcion_dataset == 'COLOMBIA':
+      df_visualizacion = datos_Colombia
+   datos_Ecuador= pd.read_csv('Ecuador.csv')
+   if opcion_dataset == 'ECUADOR':
+      df_visualizacion = datos_Ecuador
 
-   
-   
-   
    t1 = '• Cantidad de cuencas según los '+estado+'' 
    st.dataframe(df_visualizacion)
    
@@ -153,10 +179,7 @@ if selected == 'Informe':
    st.subheader('Gráfico de Profundidad vs Departamento')
    st.write('')
    st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
-   
-   
-  
-   
+	
 
 if selected == 'Equipo':
    st.markdown("<h1 style ='text-align: center'> ¿Quiénes somos?:</h1>", unsafe_allow_html= True)
