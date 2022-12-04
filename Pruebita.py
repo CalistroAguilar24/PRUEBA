@@ -61,7 +61,7 @@ if selected == 'Informe':
 	
    #DATOS POR DEPARTAMENTO
 
-   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','',''))
+   opcion_dataset = st.selectbox('Eliga el Departamento',('AMAZONAS','XD','XDD'))
    df_visualizacion = None
    estado = '-'
    datos_Ayabaca= pd.read_csv('Amazona.csv')
@@ -71,21 +71,21 @@ if selected == 'Informe':
    st.dataframe(df_visualizacion)
    
    
-   #url archivo raw
-   url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
-   datos=pd.read_csv(url, sep=',')
-   st.subheader('Gráfico de Epicentro vs Fecha_UTC')
-   st.write('')
-   st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
-   st.subheader('Gráfico de Magnitud vs Departamento')
-   st.write('')
-   st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
-   st.subheader('Gráfico de Fecha_UTC vs Departamento')
-   st.write('')
-   st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
-   st.subheader('Gráfico de Profundidad vs Departamento')
-   st.write('')
-   st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
+   ##url archivo raw
+   #url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
+   #datos=pd.read_csv(url, sep=',')
+   #st.subheader('Gráfico de Epicentro vs Fecha_UTC')
+   #st.write('')
+   #st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   #st.subheader('Gráfico de Magnitud vs Departamento')
+   #st.write('')
+   #st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
+   #st.subheader('Gráfico de Fecha_UTC vs Departamento')
+   #st.write('')
+   #st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
+   #st.subheader('Gráfico de Profundidad vs Departamento')
+   #st.write('')
+   #st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
    
    
   
