@@ -43,22 +43,8 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
-   
-   #def download_data():
-      #url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
-      #filename="Catalogo1960_2021.xlsx"
-      #urllib.request.urlretrieve(url,filename)
-      #df=pd.read_csv('Catalogo1960_2021.xlsx')
-      #return df
-   #c=download_data()
-   #st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
-   #st.dataframe(c)
-   #st.subheader("Características del Dataset")
-   #st.write(c.describe())
-
    #DATOS POR FECHA
    
-	
    #DATOS POR DEPARTAMENTO
 
    opcion_dataset = st.selectbox('Eliga el Departamento',('SELECCIONAR','AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','CALLAO','SAN MARTIN','PUNO','CUZCO','PIURA','PASCO','HUANCAVELICA','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MADRE DE DIOS','MAR'))
