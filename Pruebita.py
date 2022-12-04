@@ -179,8 +179,8 @@ if selected == 'Informe':
       st.dataframe(df_visualizacion)
    
 
-   Fecha_UTC=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
-   st.write(datos.loc[datos['EPICENTRO'] == Fecha_UTC])
+   Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
+   st.write(datos.loc[datos['EPICENTRO'] == Fecha])
    
    
    #url archivo raw
