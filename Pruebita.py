@@ -72,59 +72,15 @@ if selected == 'Informe':
       df_visualizacion = datos_Ancash
    datos_Apurimac= pd.read_csv('Apurimac.csv')
    if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
+      df_visualizacion = datos_Apurimac
    datos_Arequipa= pd.read_csv('Arequipa.csv')
    if opcion_dataset == 'AREQUIPA':
-      df_visualizacion = datos_Ancash
+      df_visualizacion = datos_Arequipa
    datos_Ayacucho= pd.read_csv('Ayacucho.csv')
    if opcion_dataset == 'AYACUCHO':
-      df_visualizacion = datos_Ancash
+      df_visualizacion = datos_Ayacucho
 
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash 
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-   datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-      datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
-       datos_Ancash= pd.read_csv('Apurimac.csv')
-   if opcion_dataset == 'APURIMAC':
-      df_visualizacion = datos_Ancash
+   
    
    
    t1 = '• Cantidad de cuencas según los '+estado+'' 
