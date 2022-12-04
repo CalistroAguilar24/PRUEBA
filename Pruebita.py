@@ -161,9 +161,9 @@ if selected == 'Informe':
    datos_Ecuador= pd.read_csv('Ecuador.csv')
    if opcion_dataset == 'ECUADOR':
       df_visualizacion = datos_Ecuador
+      t1 = '• Cantidad de cuencas según los '+estado+'' 
+      st.dataframe(df_visualizacion)
 
-   t1 = '• Cantidad de cuencas según los '+estado+'' 
-   st.dataframe(df_visualizacion)
    
    
    #url archivo raw
