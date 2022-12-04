@@ -74,11 +74,13 @@ if selected == 'Informe':
 	#df_visualizacion = df_evaluacion
 	#estado = 'en evaluación'
    t1 = '• Cantidad de cuencas según los '+estado+'' 
-   st.subheader(t1)
-   df_cuenca_freq = pd.DataFrame(df_visualizacion["DEPARTAMENTO"].value_counts())
-   st.bar_chart(df_cuenca_freq)
-   st.write('Figura 3. Gráfica del nombre de cuencas en la provincia seleccionada')
-   st.markdown("---")
+   st.dataframe(df_visualizacion)
+   #st.subheader(t1)
+   #df_cuenca_freq = pd.DataFrame(df_visualizacion["DEPARTAMENTO"].value_counts())
+   #st.bar_chart(df_cuenca_freq)
+   #st.write('Figura 3. Gráfica del nombre de cuencas en la provincia seleccionada')
+   #st.markdown("---")
+   
 
 
 
