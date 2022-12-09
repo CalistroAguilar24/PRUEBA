@@ -29,7 +29,17 @@ if selected == 'Inicio':
    col1.info("Los desastres naturales han acompañado el desarrollo de la humanidad a lo largo de la historia; por ello, rescatar y analizar a los sismos desde la historia ayuda a comprender no solo las acciones humanas en torno a ellos, sino también a descifrar las características y patrones de comportamiento de la actividad sísmica, lo que puede ayudar a los sismólogos, geólogos y otros especialistas a elaborar con mayores datos y precisión, los mapas de riesgo. Además, de tener conocimiento sobre estos fenómenos nos permitirá construir una sociedad preventiva. La vulnerabilidad física y la vulnerabilidad social nos ayudará a contar con herramientas como simulacros y mochilas de emergencia para estar preparados ante lo que podemos esperar en un evento real.")          
    col2.image(image,use_column_width=True)    
    st.info('En esta página vas a encontrar todos los acontecimientos de sismos percibidos por la población y registrados por la Red Nacional desde 1960. Asimismo, información que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones.')
-   image = Image.open('imagen 1.jpg')
+   st.subheader('Recomendaciones ante Sismos')
+   col3,col4 =st.columns(2)
+   col3.info('De prevención')
+   col3.write('1.Revisa y corrige el estado de las instalaciones de gas, agua y sistema eléctrico.')
+   col3.write('2.Libera de obstáculos las puertas y pasillos y cambia de lugar aquello que pueda lastimar o caer encima.')
+   col3.write('3.Reúnete con tu familia y vecinos para planificar acciones de prevención y respuesta.')
+   col3.write('4.Ten lista tu maletín o mochila para emergencias.')
+   col3.write('5.En tu edificio, coordina que haya luces de emergencia, que las puertas de las escaleras de escape se abran hacia afuera y que los pasillos estén libres de obstáculos.')
+   col3.write('6.No utilice los ascensores.')
+   image = Image.open('recomendaciones-ante-sismos-1-300x300.jpeg')
+   col4.image(image,use_column_width=True) 
    def download_data():
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
