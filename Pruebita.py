@@ -61,9 +61,7 @@ if selected == 'Inicio':
    image = Image.open('recomendaciones-ante-sismos-3-300x300.jpeg')
    col8.image(image,use_column_width=True) 
 
-
-
-
+   st.info('El objetivo de la creación de esta página es poder encontrar todos los sismos percibidos por la población y registrados por la Red Nacional desde 1960. Asimismo, información que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones. ')
 
    def download_data():
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
