@@ -48,7 +48,7 @@ if selected == 'Informe':
 
    Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(19600113,20211231))))
    if (datos.loc[datos['FECHA_UTC'] == Fecha]):
-      datos=pd.read_csv('Catalogo1960_2021.csv')
+      datos=pd.read_csv('https://raw.githubusercontent.com/CalistroAguilar24/PRUEBA/main/Catalogo1960_2021.csv')
       st.dataframe(datos)
 
    #DATOS POR DEPARTAMENTO
