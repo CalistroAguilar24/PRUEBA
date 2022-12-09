@@ -43,13 +43,6 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
-	
-   #DATOS POR FECHA
-
-   Fecha=st.selectbox('Seleccione la FECHA_UTC',('19600113','20211231'))
-   if Fecha == '19600113':
-      datos=pd.read_csv('Catalogo1960_2021.csv')
-      st.dataframe(datos)
 
    #DATOS POR DEPARTAMENTO
    opcion_dataset = st.selectbox('Eliga el Departamento',('SELECCIONAR','AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','CALLAO','SAN MARTIN','PUNO','CUZCO','PIURA','PASCO','HUANCAVELICA','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MADRE DE DIOS','MAR'))
@@ -185,20 +178,20 @@ if selected == 'Informe':
    
       
    #url archivo raw
-   #url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
-   #datos=pd.read_csv(url, sep=',')
-   #st.subheader('Gráfico de Epicentro vs Fecha_UTC')
-   #st.write('')
-   #st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
-   #st.subheader('Gráfico de Magnitud vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Fecha_UTC vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
-   #st.subheader('Gráfico de Profundidad vs Departamento')
-   #st.write('')
-   #st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
+   url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
+   datos=pd.read_csv(url, sep=',')
+   st.subheader('Gráfico de Epicentro vs Fecha_UTC')
+   st.write('')
+   st.line_chart(data=datos, x='EPICENTRO', y='FECHA_UTC')
+   st.subheader('Gráfico de Magnitud vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='MAGNITUD', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Fecha_UTC vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='FECHA_UTC', y='DEPARTAMENTO')
+   st.subheader('Gráfico de Profundidad vs Departamento')
+   st.write('')
+   st.line_chart(data=datos, x='PROFUNDIDAD', y='DEPARTAMENTO')
 	
    
 	
