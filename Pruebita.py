@@ -46,7 +46,8 @@ if selected == 'Informe':
 
    fecha=st.selectbox('Elija Fecha_UTC',('19600113','1961','1962','1963','1964','1965','1966','1967','1968','1969','1970','1971','1972','1973','1974','1975','1976'))
    datos= pd.read_csv('Catalogo1960_2021.csv')
-   st.dataframe(datos.loc[datos['FECHA_UTC'] == fecha])
+   df_visualizacion= datos.loc[datos['FECHA_UTC'] == fecha]
+   st.dataframe(df_visualizacion)
 
     	
    #DATOS POR DEPARTAMENTO
