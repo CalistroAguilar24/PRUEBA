@@ -180,7 +180,7 @@ if selected == 'Informe':
    
 
    Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
-   st.write(datos.loc[datos['EPICENTRO'] == Fecha])
+   st.write(datos.loc[datos['FECHA_UTC'] == Fecha])
    
    
    #url archivo raw
