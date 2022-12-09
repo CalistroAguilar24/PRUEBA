@@ -43,10 +43,14 @@ if selected == 'Inicio':
 if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
+	
    #DATOS POR FECHA
-   
-   #DATOS POR DEPARTAMENTO
 
+   Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
+   datos=pd.read_csv('Catalogo1960_2021.csv')
+   st.write(datos.loc[datos['DEPARTAMENTO'] == Fecha])
+
+   #DATOS POR DEPARTAMENTO
    opcion_dataset = st.selectbox('Eliga el Departamento',('SELECCIONAR','AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','CALLAO','SAN MARTIN','PUNO','CUZCO','PIURA','PASCO','HUANCAVELICA','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MADRE DE DIOS','MAR'))
    estado = '-'
    if opcion_dataset == 'SELECCIONAR':
@@ -178,11 +182,7 @@ if selected == 'Informe':
       df_visualizacion = datos_Ecuador
       st.dataframe(df_visualizacion)
    
-
-   Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
-   st.write(datos.loc[datos['LONGITUD'] == Fecha])
-   
-   
+      
    #url archivo raw
    #url= 'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv'
    #datos=pd.read_csv(url, sep=',')
