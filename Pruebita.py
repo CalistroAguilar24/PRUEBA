@@ -26,7 +26,7 @@ if selected == 'Inicio':
    st.subheader('¿Por qué es importante saber sobre los datos de los sismos?')
    col1, col2 =st.columns(2)
    image = Image.open('tumblr_nqmuugiAIV1qio57co1_500.webp')
-   col1.info("Los desastres naturales han acompañado el desarrollo de la humanidad a lo largo de la historia; por ello, el rescatar y analizar a los sismos desde el transcurso de los años ayuda a comprender, no solo las acciones humanas en torno a ellos, sino también a descifrar las características y patrones de comportamiento de la actividad sísmica, lo que puede ayudar a los sismólogos, geólogos y otros especialistas a elaborar con mayores datos y precisión, los mapas de riesgo.')          
+   col1.info('Los desastres naturales han acompañado el desarrollo de la humanidad a lo largo de la historia; por ello, el rescatar y analizar a los sismos desde el transcurso de los años ayuda a comprender, no solo las acciones humanas en torno a ellos, sino también a descifrar las características y patrones de comportamiento de la actividad sísmica, lo que puede ayudar a los sismólogos, geólogos y otros especialistas a elaborar con mayores datos y precisión, los mapas de riesgo.')          
    col2.image(image,use_column_width=True)    
 
    st.subheader('Recomendaciones ante Sismos')
