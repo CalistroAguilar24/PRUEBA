@@ -25,9 +25,11 @@ if selected == 'Inicio':
    st.info('La base de datos sobre la actividad sísmica en el país fue realizada por el Instituto Geofísico del Perú (IGP) desde el año de 1960 hasta el 2021. El IGP es la institución responsable del monitoreo de la actividad sísmica del país, y contiene todos aquellos sismos percibidos por la población y registrados por la Red Sísmica Nacional desde 1960, fecha en la que se inicia la vigilancia instrumental de la sismicidad en el Perú.')
    st.subheader('¿Por qué es importante saber sobre los datos de los sismos?')
    col1, col2 =st.columns(2)
-   image = Image.open('imagen 1.jpg')
+   image = Image.open('tumblr_nqmuugiAIV1qio57co1_500.webp')
    col1.info("Los desastres naturales han acompañado el desarrollo de la humanidad a lo largo de la historia; por ello, rescatar y analizar a los sismos desde la historia ayuda a comprender no solo las acciones humanas en torno a ellos, sino también a descifrar las características y patrones de comportamiento de la actividad sísmica, lo que puede ayudar a los sismólogos, geólogos y otros especialistas a elaborar con mayores datos y precisión, los mapas de riesgo. Además, de tener conocimiento sobre estos fenómenos nos permitirá construir una sociedad preventiva. La vulnerabilidad física y la vulnerabilidad social nos ayudará a contar con herramientas como simulacros y mochilas de emergencia para estar preparados ante lo que podemos esperar en un evento real.")          
-   col2.image(image,use_column_width=True)       
+   col2.image(image,use_column_width=True)    
+   st.info('En esta página vas a encontrar todos los acontecimientos de sismos percibidos por la población y registrados por la Red Nacional desde 1960. Asimismo, información que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones.')
+   image = Image.open('imagen 1.jpg')
    def download_data():
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
