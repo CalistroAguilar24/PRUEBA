@@ -46,7 +46,8 @@ if selected == 'Informe':
 
    fecha=st.selectbox('Elija Fecha_UTC',('19600113','1961','1962','1963','1964','1965','1966','1967','1968','1969','1970','1971','1972','1973','1974','1975','1976'))
    datos= pd.read_csv('Catalogo1960_2021.csv')
-   datos.loc[datos['FECHA_UTC'] == fecha]
+   st.dataframe(datos.loc[datos['FECHA_UTC'] == fecha])
+
     	
    #DATOS POR DEPARTAMENTO
    opcion_dataset = st.selectbox('Eliga el Departamento',('SELECCIONAR','AMAZONAS','ANCASH','APURIMAC','AREQUIPA','AYACUCHO','UCAYALI','TUMBES','TACNA','CAJAMARCA','CALLAO','SAN MARTIN','PUNO','CUZCO','PIURA','PASCO','HUANCAVELICA','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MADRE DE DIOS','MAR'))
