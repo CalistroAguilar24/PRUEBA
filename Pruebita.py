@@ -28,7 +28,7 @@ if selected == 'Inicio':
    image = Image.open('tumblr_nqmuugiAIV1qio57co1_500.webp')
    col1.info("Los desastres naturales han acompañado el desarrollo de la humanidad a lo largo de la historia; por ello, rescatar y analizar a los sismos desde la historia ayuda a comprender no solo las acciones humanas en torno a ellos, sino también a descifrar las características y patrones de comportamiento de la actividad sísmica, lo que puede ayudar a los sismólogos, geólogos y otros especialistas a elaborar con mayores datos y precisión, los mapas de riesgo. Además, de tener conocimiento sobre estos fenómenos nos permitirá construir una sociedad preventiva. La vulnerabilidad física y la vulnerabilidad social nos ayudará a contar con herramientas como simulacros y mochilas de emergencia para estar preparados ante lo que podemos esperar en un evento real.")          
    col2.image(image,use_column_width=True)    
-   st.info('En esta página vas a encontrar todos los acontecimientos de sismos percibidos por la población y registrados por la Red Nacional desde 1960. Asimismo, información que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones.')
+
    st.subheader('Recomendaciones ante Sismos')
    col3,col4 =st.columns(2)
    col3.info('De prevención')
@@ -40,6 +40,31 @@ if selected == 'Inicio':
    col3.write('6.No utilice los ascensores.')
    image = Image.open('recomendaciones-ante-sismos-1-300x300.jpeg')
    col4.image(image,use_column_width=True) 
+   
+   col5,col6 =st.columns(2)
+   col5.info('En la emergencia')
+   col5.write('1.Conserva la calma, evalúa la situación y ayuda a los demás.')
+   col5.write('2.Aléjate de las ventanas, repisas y todo aquello que pueda caer en la vía de evacuación.')
+   col5.write('3.Si no puedes salir, ubícate en una zona de seguridad hasta la evacuación.')
+   col5.write('4.Lleva contigo tu maletín o mochila de emergencia.')
+   image = Image.open('recomendaciones-ante-sismos-2-300x300.jpeg')
+   col6.image(image,use_column_width=True) 
+	
+   col7,col8 =st.columns(2)
+   col7.info('Acciones inmediatas despúes del sismo')
+   col7.write('1.Revisa si el inmueble está habitable, así como si las conexiones de agua, gas y el suministro eléctrico están en buen estado.')
+   col7.write('2.Haz uso SOLO de su linterna, no encienda fósforos ni velas.')
+   col7.write('3.Utiliza mensajes de texto para comunicarte. Llama por teléfono solo si es necesario y por breves instantes.')
+   col7.write('4.Una vez concluido el sismo, acude al punto de encuentro previamente establecido con tus hijos y familiares.')
+   col7.write('5.Aléjate de la playa lo antes posible debido a la posibilidad de un eventual tsunami.')
+   col7.write('6.Evita mover personas heridas o con fracturas sin ayuda profesional, salvo que corran peligro de lesiones mayores.')
+   image = Image.open('recomendaciones-ante-sismos-3-300x300.jpeg')
+   col8.image(image,use_column_width=True) 
+
+
+
+
+
    def download_data():
       url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
       filename="Catalogo1960_2021.xlsx"
