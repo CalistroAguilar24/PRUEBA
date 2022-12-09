@@ -47,7 +47,7 @@ if selected == 'Informe':
    #DATOS POR FECHA
 
    Fecha=st.selectbox('Seleccione la FECHA_UTC',list(reversed(range(1960,2022))))
-   if datos.loc[datos['FECHA_UTC'] == Fecha]:
+   if (datos.loc[datos['FECHA_UTC'] == Fecha]):
       datos=pd.read_csv('Catalogo1960_2021.csv')
       st.dataframe(datos)
 
