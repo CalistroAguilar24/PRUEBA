@@ -44,7 +44,7 @@ if selected == 'Informe':
    st.markdown("<h1 style ='text-align: center'> CATÁLOGO SÍSMICO 1960-2021 (IGP):</h1>", unsafe_allow_html= True)
    st.markdown("---")
 
-   fecha=st.selectbox('Elija Fecha_UTC',('1960','1961','1962','1963','1964','1965','1966','1967','1968','1969','1970','1971','1972','1973','1974','1975','1976'))
+   fecha=st.selectbox('Elija Fecha_UTC',('19600113','1961','1962','1963','1964','1965','1966','1967','1968','1969','1970','1971','1972','1973','1974','1975','1976'))
    datos= pd.read_csv('Catalogo1960_2021.csv')
    st.write(datos.loc[datos['FECHA_UTC'] == fecha])
     	
